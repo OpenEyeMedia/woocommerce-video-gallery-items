@@ -1,0 +1,144 @@
+/**
+ * WooCommerce Video Gallery Frontend Styles
+ */
+
+/* Video gallery item styles */
+.wc-video-gallery-item {
+    position: relative;
+    cursor: pointer;
+}
+
+.wc-video-gallery-item img {
+    width: 100%;
+    height: auto;
+}
+
+/* Video play overlay */
+.wc-video-play-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.wc-video-play-overlay span {
+    color: #fff;
+    font-size: 30px;
+    line-height: 1;
+}
+
+.wc-video-gallery-item:hover .wc-video-play-overlay {
+    background: rgba(0, 0, 0, 0.9);
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* White popup container */
+.white-popup {
+    position: relative;
+    background: transparent;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+/* Video container - maintains aspect ratio */
+.video-container {
+    position: relative;
+    display: inline-block;
+    line-height: 0;
+}
+
+.video-container video {
+    display: block;
+    max-width: 90vw;
+    max-height: min(1000px, 80vh);
+    width: auto;
+    height: auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Magnific Popup overrides */
+.mfp-video-popup {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.mfp-video-popup .mfp-container {
+    padding: 0;
+    text-align: center;
+}
+
+.mfp-video-popup .mfp-content {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.mfp-video-popup .mfp-inline-holder .mfp-content {
+    width: auto !important;
+    display: inline-block;
+}
+
+/* Center content vertically */
+.mfp-video-popup .mfp-container:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+/* Close button */
+.mfp-video-popup .mfp-close {
+    color: #fff;
+    font-size: 46px;
+    font-weight: 300;
+    opacity: 0.8;
+    right: 30px;
+    top: 30px;
+}
+
+.mfp-video-popup .mfp-close:hover {
+    opacity: 1;
+}
+
+/* Prevent PhotoSwipe on videos */
+.wc-video-gallery-item[data-thumb-alt="video"] {
+    pointer-events: auto !important;
+}
+
+.wc-video-gallery-item a[data-rel="video"] {
+    cursor: pointer !important;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .wc-video-play-overlay {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .wc-video-play-overlay span {
+        font-size: 24px;
+    }
+    
+    .video-container video {
+        max-width: 95vw;
+        max-height: 70vh;
+    }
+    
+    .mfp-video-popup .mfp-close {
+        right: 10px;
+        top: 10px;
+        font-size: 36px;
+    }
+}

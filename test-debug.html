@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video Gallery Test</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+    jQuery(document).ready(function($) {
+        // Test 1: Check if wp.media is available
+        $('#test-wp-media').on('click', function() {
+            if (typeof wp !== 'undefined' && typeof wp.media !== 'undefined') {
+                $('#result-1').html('<span style="color: green;">✓ wp.media is available</span>');
+                
+                // Try to open media frame
+                var frame = wp.media({
+                    title: 'Select Image',
+                    multiple: false
+                });
+                
+                frame.open();
+            } else {
+                $('#result-1').html('<span style="color: red;">✗ wp.media is NOT available</span>');
+            }
+        });
+        
+        // Test 2: Check jQuery event binding
+        $('#test-jquery').on('click', function() {
+            $('#result-2').html('<span style="color: green;">✓ jQuery events work</span>');
+        });
+        
+        // Test 3: Simulate thumbnail button
+        $(document).on('click', '.test-thumbnail-button', function() {
+            $('#result-3').html('<span style="color: green;">✓ Document event delegation works</span>');
+        });
+    });
+    </script>
+</head>
+<body style="padding: 20px; font-family: Arial, sans-serif;">
+    <h1>WooCommerce Video Gallery Debug Tests</h1>
+    
+    <h2>Test 1: WordPress Media Library</h2>
+    <button id="test-wp-media" class="button">Test wp.media</button>
+    <div id="result-1" style="margin-top: 10px;"></div>
+    
+    <h2>Test 2: jQuery Direct Binding</h2>
+    <button id="test-jquery" class="button">Test jQuery</button>
+    <div id="result-2" style="margin-top: 10px;"></div>
+    
+    <h2>Test 3: Event Delegation</h2>
+    <button class="test-thumbnail-button button">Test Delegation</button>
+    <div id="result-3" style="margin-top: 10px;"></div>
+    
+    <h2>Current Environment</h2>
+    <div id="environment">
+        <script>
+        document.write('<p>jQuery: ' + (typeof jQuery !== 'undefined' ? jQuery.fn.jquery : 'Not loaded') + '</p>');
+        document.write('<p>WordPress: ' + (typeof wp !== 'undefined' ? 'Loaded' : 'Not loaded') + '</p>');
+        document.write('<p>wp.media: ' + (typeof wp !== 'undefined' && typeof wp.media !== 'undefined' ? 'Loaded' : 'Not loaded') + '</p>');
+        </script>
+    </div>
+    
+    <style>
+    .button {
+        padding: 8px 16px;
+        background: #0073aa;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+    .button:hover {
+        background: #005a87;
+    }
+    </style>
+</body>
+</html>

@@ -1,0 +1,91 @@
+/**
+ * WooCommerce Video Gallery Admin Styles
+ */
+
+#wc-video-gallery-container {
+    margin-top: 10px;
+}
+
+.wc-video-items {
+    margin-bottom: 10px;
+}
+
+.wc-video-item {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.wc-video-item video {
+    display: block;
+    margin-bottom: 10px;
+    max-height: 150px;
+}
+
+.wc-video-position {
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.wc-remove-video {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.wc-video-thumbnail-section {
+    margin: 10px 0;
+    padding: 10px;
+    background: #f9f9f9;
+    border: 1px solid #e5e5e5;
+}
+
+.wc-video-thumbnail-preview {
+    margin-bottom: 10px;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wc-video-thumbnail-preview img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+}
+
+.wc-video-thumbnail-preview span {
+    color: #666;
+    font-style: italic;
+}
+
+.wc-video-sortable-placeholder {
+    border: 2px dashed #bbb;
+    background: #f0f0f0;
+    height: 200px;
+    margin-bottom: 10px;
+}
+
+/* Drag and drop styles */
+.ui-sortable-helper {
+    opacity: 0.8;
+}
+
+#wc-add-video {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Meta box styling */
+#wc_video_gallery_meta .inside {
+    padding: 10px;
+}
+
+#wc_video_gallery_meta .description {
+    font-style: italic;
+    colour: #666;
+    margin-top: 10px;
+}
